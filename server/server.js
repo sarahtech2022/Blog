@@ -18,14 +18,14 @@ app.get("/", (req, res) => {
 app.get("/blogs", async (req, res) => {
   try {
     const { rows: blogform } = await db.query("SELECT * FROM blogform");
-    res.send(blogs);
+    res.send(blogform);
   } catch (e) {
     return res.status(400).json({ e });
   }
 });
 
 // 2. (GET to get the comments from DB)create the get request for COMMENTS in the endpoint '/api/students'
-app.get("/api/comments", async (req, res) => {
+app.get("/comments", async (req, res) => {
   try {
     const { rows: comments } = await db.query("SELECT * FROM comments");
     res.send(comments);
@@ -35,7 +35,7 @@ app.get("/api/comments", async (req, res) => {
 });
 
 // 2. create the POST request, the user is adding to the database
-app.post("/api/postblog", async (req, res) => {
+app.post("/postblog", async (req, res) => {
   try {
     const newStudent = {
       date: req.body.date,
