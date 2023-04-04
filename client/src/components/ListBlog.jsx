@@ -3,6 +3,9 @@ import * as ioicons from 'react-icons/io5'
 import MyForm from './Form';
 import BlogCard from './BlogCard';
 
+import BlogPage from './BlogPage';
+import { Outlet, Link } from 'react-router-dom';
+
 const ListBlog = () => {
 
     // this is my original state with an array of students 
@@ -66,8 +69,13 @@ const ListBlog = () => {
             <h2>Blog Posts </h2>
             <ul>
                 {blogs.map((blog) => {
-                    return <li key={blog.id_blog}> <BlogCard blog={blog} /></li>
+                    
+                    return <li key={blog.id_blog}> <BlogCard blog={blog}  /></li>
+                    
                 })}
+                 <Link to="/BlogPage/1" > Click to Read Blog </Link>
+       <Outlet></Outlet>
+                
             </ul>
         </div>
         <MyForm  onSaveBlog={onSaveBlog}  />
