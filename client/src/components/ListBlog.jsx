@@ -6,56 +6,57 @@ import BlogCard from './BlogCard';
 const ListBlog = () => {
 
     // this is my original state with an array of students 
-    const [students, setStudents] = useState([]);
+    const [blogs, setBlogs] = useState([]);
 
     //this is the state needed for the UpdateRequest
-    const [editingStudent, setEditingStudent] = useState(null)
+    // const [editingStudent, setEditingStudent] = useState(null)
 
+   //1. Connecting to the Get request to get the list of blogs from the data base
     const loadStudents = () => {
-        // A function to fetch the list of students that will be load anytime that list change
-        fetch("http://localhost:8080/api/students")
+        // A function to fetch the list of blogs that will load anytime the list changes
+        fetch("http://localhost:8080/blogs")
             .then((response) => response.json())
-            .then((students) => {
-                setStudents(students);
+            .then((blogs) => {
+                setBlogs(blogs);
             });
     }
 
     useEffect(() => {
         loadStudents();
-    }, [students]);
+    }, []); //remove whats inside of the array to stop error ***
 
-    const onSaveStudent = (newStudent) => {
+    //Taking the data from the form and adding it to the array with all the other data from old blogs
+    const onSaveBlog = (newBlog) => {
         //console.log(newStudent, "From the parent - List of Students");
-        setStudents((students) => [...students, newStudent]);
+        setBlogs((blogs) => [...blogs, newBlog]);
     }
 
 
     //A function to control the update in the parent (student component)
-    const updateStudent = (savedStudent) => {
-        // console.log("Line 29 savedStudent", savedStudent);
-        // This function should update the whole list of students - 
-        loadStudents();
-    }
+    // const updateStudent = (savedStudent) => {
+    //     // console.log("Line 29 savedStudent", savedStudent);
+    //     // This function should update the whole list of students - 
+    //     loadStudents();
+    // }
 
     //A function to handle the Delete funtionality
-    const onDelete = (student) => {
-        //console.log(student, "delete method")
-        return fetch(`http://localhost:8080/api/students/${student.id}`, {
-            method: "DELETE"
-        }).then((response) => {
-            //console.log(response);
-            if (response.ok) {
-                loadStudents();
-            }
-        })
-    }
+    // const onDelete = (student) => {
+    //     //console.log(student, "delete method")
+    //     return fetch(`http://localhost:8080/api/students/${student.id}`, {
+    //         method: "DELETE"
+    //     }).then((response) => {
+    //         //console.log(response);
+    //         if (response.ok) {
+    //             loadStudents();
+    //         }
+    //     })
+    // }
 
     //A function to handle the Update functionality
-    const onUpdate = (toUpdateStudent) => {
-        //console.log(toUpdateStudent);
-        setEditingStudent(toUpdateStudent);
-
-    }
+    // const onUpdate = (toUpdateStudent) => {
+    //     //console.log(toUpdateStudent);
+    //     setEditingStudent(toUpdateStudent);
+    // }
 
 
 
@@ -64,12 +65,12 @@ const ListBlog = () => {
         <div className="list-students">
             <h2>Blog Posts </h2>
             <ul>
-                {students.map((student) => {
-                    return <li key={student.id}> <BlogCard student={student} toDelete={onDelete} toUpdate={onUpdate} /></li>
+                {blogs.map((blog) => {
+                    return <li key={blog.id_blog}> <BlogCard blog={blog} /></li>
                 })}
             </ul>
         </div>
-        <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} />
+        <MyForm  onSaveBlog={onSaveBlog}  />
         </div>
     );
 }

@@ -38,7 +38,6 @@ app.get("/comments", async (req, res) => {
 app.post("/postblog", async (req, res) => {
   try {
     const newStudent = {
-      date: req.body.date,
       author: req.body.author,
       title: req.body.title,
       body: req.body.body,
@@ -46,14 +45,8 @@ app.post("/postblog", async (req, res) => {
     };
     //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
     const result = await db.query(
-      "INSERT INTO blogform(date, author, title, body, image) VALUES($1, $2, $3, $4, $5) RETURNING *",
-      [
-        newStudent.date,
-        newStudent.author,
-        newStudent.title,
-        newStudent.body,
-        newStudent.image,
-      ]
+      "INSERT INTO blogform(author, title, body, image) VALUES($1, $2, $3, $4) RETURNING *",
+      [newStudent.author, newStudent.title, newStudent.body, newStudent.image]
     );
     console.log(result.rows[0]);
     res.json(result.rows[0]);

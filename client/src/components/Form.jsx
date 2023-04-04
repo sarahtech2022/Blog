@@ -1,43 +1,50 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 
-const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
+const MyForm = ({ onSaveBlog }) => {
 
     // This is the original State with not initial student 
-    const [student, setStudent] = useState(editingStudent || {
-        firstname: "",
-        lastname: "",
-        is_current: false
+    const [formInput, setFormInput] = useState( {
+        author: "",
+        title: "",
+        body: "",
+        image: "",
     });
 
     //create functions that handle the event of the user typing into the form
-    const handleNameChange = (event) => {
-        const firstname = event.target.value;
-        setStudent((student) => ({ ...student, firstname }));
+    const handleAuthorChange = (event) => {
+        const author = event.target.value;
+        setFormInput((formInput) => ({ ...formInput, author }));
 
     };
 
-    const handleLastnameChange = (event) => {
-        const lastname = event.target.value;
-        setStudent((student) => ({ ...student, lastname }));
+    const handleTitleChange = (event) => {
+        const title = event.target.value;
+        setFormInput((formInput) => ({ ...formInput, title }));
     };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
+    const handleBodyChange = (event) => {
+        const body = event.target.value;
+        setFormInput((formInput) => ({ ...formInput, body }));
     };
+
+    const handleImageChange = (event) => {
+        const image = event.target.value;
+        setFormInput((formInput) => ({ ...formInput, image }));
+    };
+
+
 
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setFormInput({ author: "", title: "", body: "", image: "" })
     }
 
-    //A function to handle the post request
-    const postStudent = (newStudent) => {
-        return fetch("http://localhost:8080/api/students", {
+    //A function to handle the post request for the blog
+    const postBlog = (newBlog) => {
+        return fetch("http://localhost:8080/postblog", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newStudent),
+            body: JSON.stringify(newBlog),
         })
             .then((response) => {
                 return response.json();
@@ -45,74 +52,77 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
             .then((data) => {
                 //console.log("From the post ", data);
                 //I'm sending data to the List of Students (the parent) for updating the list
-                onSaveStudent(data);
+                onSaveBlog(data);
                 //this line just for cleaning the form
                 clearForm();
             });
     };
 
-    //A function to handle the post request
-    const putStudent = (toEditStudent) => {
-        return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(toEditStudent),
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                onUpdateStudent(data);
-                //this line just for cleaning the form
-                clearForm();
-            });
-    };
 
 
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (student.id) {
-            putStudent(student);
-        } else {
-            postStudent(student);
-        }
+            postBlog(formInput);
+        
     };
 
     return (
         <Form className='form-students' onSubmit={handleSubmit}>
             <Form.Group>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>Author</Form.Label>
                 <input
                     type="text"
-                    id="add-user-name"
-                    placeholder="First Name"
+                    id="add-author-name"
+                    placeholder="Author"
                     required
-                    value={student.firstname}
-                    onChange={handleNameChange}
+                    value={formInput.author}
+                    onChange={handleAuthorChange}
                 />
             </Form.Group>
+
+
             <Form.Group>
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <input
                     type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                    id="add-title"
+                    placeholder="Title"
                     required
-                    value={student.lastname}
-                    onChange={handleLastnameChange}
+                    value={formInput.title}
+                    onChange={handleTitleChange}
                 />
             </Form.Group>
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
+
             <Form.Group>
-            <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            <Form.Label>Body</Form.Label>
+                <input
+                type="text"
+                id="add-body"
+                placeholder="Body"
+                required
+                 value={formInput.body}
+                onChange={handleBodyChange}
+                  />
+            </Form.Group>
+
+                <Form.Group>
+            <Form.Label>Image</Form.Label>
+                <input
+                type="file"
+                id="add-image"
+                required
+                 value={formInput.image}
+                onChange={handleImageChange}
+                  />
+            </Form.Group>
+
+
+
+
+            <Form.Group>
+            <Button type="submit" variant="outline-success">{formInput.id_blog ? "Edit Student" : "Add Blog"}</Button>
+            {formInput.id_blog ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
         </Form>
     );
