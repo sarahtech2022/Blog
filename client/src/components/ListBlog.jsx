@@ -6,7 +6,7 @@ import BlogCard from './BlogCard';
 // import BlogPage from '../routes/BlogPage';
 // import { Link } from 'react-router-dom';
 
-const ListBlog = (setBlogData) => {
+const ListBlog = (/*setBlogData*/) => {
 
     // this is my original state with an array of students 
     const [blogs, setBlogs] = useState([]);

@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
        index: true,
-       element: <Home blogData={blogData} setBlogData={setBlogData}/>
+       element: <Home /*blogData={blogData} setBlogData={setBlogData}*/ />
       },
       {
         path: "/blog/:id", 
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 
 function App() {
 
-const [blogData, setBlogData] = useState([]);
+// const [blogData, setBlogData] = useState([]); ***************
   
 
   return (

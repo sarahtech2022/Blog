@@ -2,10 +2,10 @@
 
 
 
-const Home = ( setBlogData) => {
+const Home = ( /*setBlogData */) => {
     return (
         <div>
-         <ListBlog setBlogData={setBlogData}/>
+         <ListBlog /*setBlogData={setBlogData}*/ />
         </div>
     )};
 
