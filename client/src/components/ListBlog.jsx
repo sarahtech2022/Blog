@@ -72,7 +72,7 @@ const ListBlog = () => {
                     return <li key={blog.id_blog}> <BlogCard blog={blog}  /></li>
                     
                 })}
-                 <Link to="/blog/8" > Click to Read Blog </Link>
+                 
    
                 
             </ul>

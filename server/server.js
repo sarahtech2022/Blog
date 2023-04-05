@@ -36,6 +36,8 @@ app.get("/comments", async (req, res) => {
 
 // 2. create the POST request, the user is adding to the database
 app.post("/postblog", async (req, res) => {
+  // HERE is where i tell it to save rhe image in the imagestore folder
+  //Express file upload package***
   try {
     const newStudent = {
       author: req.body.author,
@@ -43,7 +45,8 @@ app.post("/postblog", async (req, res) => {
       body: req.body.body,
       image: req.body.image,
     };
-    //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
+    //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent])
+
     const result = await db.query(
       "INSERT INTO blogform(author, title, body, image) VALUES($1, $2, $3, $4) RETURNING *",
       [newStudent.author, newStudent.title, newStudent.body, newStudent.image]
