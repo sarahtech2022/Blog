@@ -3,8 +3,8 @@ import * as ioicons from 'react-icons/io5'
 import MyForm from './Form';
 import BlogCard from './BlogCard';
 
-import BlogPage from '../routes/BlogPage';
-import { Link } from 'react-router-dom';
+// import BlogPage from '../routes/BlogPage';
+// import { Link } from 'react-router-dom';
 
 const ListBlog = () => {
 

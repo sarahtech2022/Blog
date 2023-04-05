@@ -2,7 +2,6 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import * as ioicons from 'react-icons/io5'
-// import BlogPage from './BlogPage';
 import { Link } from 'react-router-dom';
 
 
@@ -16,8 +15,6 @@ const BlogCard = ({blog}) => {
 //     </Route>
 //   )
 // )
-
-
 
     return (
         <>
