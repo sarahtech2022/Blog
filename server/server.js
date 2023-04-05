@@ -59,6 +59,19 @@ app.post("/postblog", async (req, res) => {
   }
 });
 
+// Get request for my BlogPage
+// 1. (GET to get the blog posts from DB) create the get request for BLOGS in the endpoint '/api/students'
+app.get("/blog", async (req, res) => {
+  try {
+    const { rows: blogform } = await db.query(
+      "SELECT * FROM blogform WHERE id_blog = 1 "
+    );
+    res.send(blogform);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
+});
+
 // console.log that your server is up and running
 app.listen(PORT, () => {
   console.log(`Hola, Server listening on ${PORT}`);
