@@ -6,7 +6,7 @@ import BlogCard from './BlogCard';
 // import BlogPage from '../routes/BlogPage';
 // import { Link } from 'react-router-dom';
 
-const ListBlog = () => {
+const ListBlog = (setBlogData) => {
 
     // this is my original state with an array of students 
     const [blogs, setBlogs] = useState([]);
@@ -21,6 +21,7 @@ const ListBlog = () => {
             .then((response) => response.json())
             .then((blogs) => {
                 setBlogs(blogs);
+                // setBlogData(blogs)  ** is this where I call the callback function to update the state to the App parent
             });
     }
 

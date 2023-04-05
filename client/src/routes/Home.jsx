@@ -1,9 +1,11 @@
  import ListBlog from "../components/ListBlog";
 
-const Home = () => {
+
+
+const Home = ( setBlogData) => {
     return (
         <div>
-         <ListBlog/>
+         <ListBlog setBlogData={setBlogData}/>
         </div>
     )};
 
