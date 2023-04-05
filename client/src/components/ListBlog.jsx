@@ -3,8 +3,8 @@ import * as ioicons from 'react-icons/io5'
 import MyForm from './Form';
 import BlogCard from './BlogCard';
 
-import BlogPage from './BlogPage';
-import { Outlet, Link } from 'react-router-dom';
+import BlogPage from '../routes/BlogPage';
+import { Link } from 'react-router-dom';
 
 const ListBlog = () => {
 
@@ -69,12 +69,11 @@ const ListBlog = () => {
             <h2>Blog Posts </h2>
             <ul>
                 {blogs.map((blog) => {
-                    
                     return <li key={blog.id_blog}> <BlogCard blog={blog}  /></li>
                     
                 })}
-                 <Link to="/BlogPage/1" > Click to Read Blog </Link>
-       <Outlet></Outlet>
+                 <Link to="/blog/8" > Click to Read Blog </Link>
+   
                 
             </ul>
         </div>

@@ -21,22 +21,19 @@ const BlogCard = ({blog}) => {
 
     return (
         <>
-       {/* <Link to="/BlogPage/1" > Click to Read Blog </Link>
-       <Outlet></Outlet> */}
-        {/* <Card>
+    
+        <Card>
             
             <Card.Body>
           
             <Card.Title>{blog.date} {blog.author} {blog.title} {blog.body}</Card.Title>
-                     <div> <Link to="/BlogPage">Click To Read Blog</Link> </div>
-                  <Routes>
-                      <Route path="/BlogPage" element={<BlogPage/>} /> 
+                    
                 
             <Button variant="outline-danger" onClick={()=>{onDelete(blog)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
             <Button variant="outline-info" onClick={()=>{onUpdate(blog)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button>
-            </Routes>
+            
             </Card.Body>
-        </Card> */}
+        </Card>
        
         </>
     )
