@@ -60,11 +60,15 @@ app.post("/postblog", async (req, res) => {
 });
 
 // Get request for my BlogPage
-// 1. (GET to get the blog posts from DB) create the get request for BLOGS in the endpoint '/api/students'
-app.get("/blog", async (req, res) => {
+// 4. (GET to get the blog posts from DB) create the get request for BLOGS in the endpoint '/api/students'
+app.get("/blog/:blogID", async (req, res) => {
+  //doesnt need to be the same!
+  // 1. query param, 2. body, 3. Mine is a route parameter
   try {
     const { rows: blogform } = await db.query(
-      "SELECT * FROM blogform WHERE id_blog = 1 "
+      //query takes 2 parameters one is the SQL query
+      "SELECT * FROM blogform WHERE id_blog=$1", //Query knows about my DB but the JS doesnt
+      [req.params.blogID]
     );
     res.send(blogform);
   } catch (e) {

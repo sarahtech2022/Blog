@@ -10,7 +10,7 @@ const BlogPage = () => {
   //Fetching each individual blog from my backend server to get that data here
   const loadBlog = () => {
     // A function to fetch a blog for the blog page
-    fetch("http://localhost:8080/blog")
+    fetch(`http://localhost:8080/blog/${blogID}`)
       .then((response) => response.json())
       .then((blog) => {
         setBlog(blog);
@@ -19,7 +19,7 @@ const BlogPage = () => {
 
   useEffect(() => {
     loadBlog();
-  }, []);
+  }, [blogID]);
 
   //need to call a function on an event or will have a loop!
   //UseEffect needed here.
@@ -27,7 +27,10 @@ const BlogPage = () => {
   return (
     <div>
       <p>This is the Blog Page, with blog ID: {blogID}</p>
-      <p> {blog.author}</p>
+      <p>
+        {" "}
+        {blog[0].author} {blog[0].title} {blog[0].body}{" "}
+      </p>
     </div>
   );
 };
