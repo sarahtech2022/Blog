@@ -4,10 +4,17 @@ require("dotenv").config();
 const path = require("path");
 const db = require("./db/db-connection.js");
 
+const fileUpload = require("express-fileupload");
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
+app.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+  })
+);
 
 // creates an endpoint for the route "/""
 app.get("/", (req, res) => {
@@ -38,6 +45,9 @@ app.get("/comments", async (req, res) => {
 app.post("/postblog", async (req, res) => {
   // HERE is where i tell it to save rhe image in the imagestore folder
   //Express file upload package***
+  //   var myFILENAME = req.files.file.name;
+  //   req.files.file.mv("/imagestorage/" + myFILENAME); // mv is a function, tell mv to put the image in imagestorage  //Ask C: linking vs uploading images!
+
   try {
     const newStudent = {
       author: req.body.author,
