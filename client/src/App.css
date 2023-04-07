@@ -1,6 +1,6 @@
 .App {
   /* min-height: 100vh; */
-  background-color: rgb(123, 90, 147);
+  background-color: rgb(230, 137, 208);
   margin: 5px;
 }
 
@@ -38,14 +38,7 @@ form {
   flex: 1;
 }
 
-input[type=text] {
-  display: inline-block;
-  margin-top: -10px;
-  width: 100%;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 3px solid #b682b1
-}
+
 
 button.btn.btn-primary {
   margin-top: 25px;
@@ -94,8 +87,16 @@ h1{
 }
 
 #submit{
-  background-color: #b682b1;
+  background-color: #fdb1e3;
   text-decoration-color: aliceblue;
 }
 
 
+input[type=text], textarea {
+  display: inline-block;
+  margin-top: -10px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 3px solid #e880bb
+}

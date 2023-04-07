@@ -90,13 +90,14 @@ const MyForm = ({ onSaveBlog }) => {
 
       <Form.Group>
         <Form.Label>Body</Form.Label>
-        <input
-          type="text"
+        <textarea
+          type="textarea"
           id="add-body"
           placeholder="Body"
           required
           value={formInput.body}
           onChange={handleBodyChange}
+          rows={3}
         />
       </Form.Group>
 
