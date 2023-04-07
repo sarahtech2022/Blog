@@ -127,9 +127,11 @@ input[type=text], textarea {
 }
 
 div.card{
-  background-color: #f0b0d4;
+  background-color: #f496b8;
   color: rgb(255, 255, 255);
 }
+
+
 
 #link{
   color: black;
