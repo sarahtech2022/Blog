@@ -1,5 +1,5 @@
 .App {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: rgb(123, 90, 147);
   margin: 5px;
 }
@@ -92,3 +92,10 @@ h1{
   text-align: center;
   /* margin-right: 40px; */
 }
+
+#submit{
+  background-color: #b682b1;
+  text-decoration-color: aliceblue;
+}
+
+
