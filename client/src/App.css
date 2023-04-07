@@ -1,8 +1,10 @@
 .App {
   /* min-height: 100vh; */
-  background-color: rgb(230, 137, 208);
+  background-color: rgb(227, 98, 162);
   margin: 5px;
 }
+
+
 
 .mybody {
   display: flex;
@@ -87,7 +89,7 @@ h1{
 }
 
 #submit{
-  background-color: #fdb1e3;
+  background-color: #eba8d4;
   text-decoration-color: aliceblue;
 }
 
@@ -99,4 +101,27 @@ input[type=text], textarea {
   font-size: 15px;
   border-radius: 10px;
   border: 3px solid #e880bb
+}
+
+
+#titlepic {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
+
+#titlediv {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.card{
+  background-color: #f0b0d4;
+  color: rgb(255, 255, 255);
+}
+
+#link{
+  color: black;
 }

@@ -22,7 +22,10 @@ const BlogCard = ({ blog }) => {
           <Card.Title>
             {blog.date.substring(0, 10)} {blog.author} {blog.title} {blog.body}
           </Card.Title>
-          <Link to={`/blog/${blog.id_blog}`}> Click Here To Read Blog</Link>
+          <Link id="link" to={`/blog/${blog.id_blog}`}>
+            {" "}
+            Click Here To Read Blog
+          </Link>
           <img src={blog.image} className="photo"></img>
           {/* <Button
             variant="outline-danger"
