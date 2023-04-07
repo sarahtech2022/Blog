@@ -4,7 +4,7 @@ const Root = () => {
   return (
     <div>
       <div id="titlediv">
-        <h1 className="title"> Sarah's Blog</h1>
+        <h1 id="title"> Sarah's Blog</h1>
         <img
           id="titlepic"
           src="https://cdn-icons-png.flaticon.com/512/8277/8277582.png"

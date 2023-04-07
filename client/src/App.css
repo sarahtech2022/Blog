@@ -134,3 +134,16 @@ div.card{
 #link{
   color: black;
 }
+
+
+#title{
+    text-align: center;
+    
+      /* font-family: Changa One; */
+      color: rgb(244, 105, 165);
+      text-shadow: 1px 1px 2px black,
+        0 0 1em rgb(229, 174, 216),
+        0 0 0.2em rgb(198, 155, 218);
+      font-size: 4rem;
+      font-weight: 600;
+}
