@@ -22,12 +22,9 @@ const BlogCard = ({ blog }) => {
           <Card.Title>
             {blog.date} {blog.author} {blog.title} {blog.body}
           </Card.Title>
-          <Link to={`/blog/${blog.id_blog}`}>
-            {" "}
-            Click here to Read This Blog
-          </Link>
+          <Link to={`/blog/${blog.id_blog}`}> Click Here To Read Blog</Link>
           <img src={blog.image} className="photo"></img>
-          <Button
+          {/* <Button
             variant="outline-danger"
             onClick={() => {
               onDelete(blog);
@@ -45,7 +42,7 @@ const BlogCard = ({ blog }) => {
           >
             {" "}
             <ioicons.IoSync />
-          </Button>
+          </Button> */}
         </Card.Body>
       </Card>
     </>

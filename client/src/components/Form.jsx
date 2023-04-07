@@ -65,6 +65,7 @@ const MyForm = ({ onSaveBlog }) => {
       <Form.Group>
         <Form.Label>Author</Form.Label>
         <input
+          className="input"
           type="text"
           id="add-author-name"
           placeholder="Author"
@@ -77,6 +78,7 @@ const MyForm = ({ onSaveBlog }) => {
       <Form.Group>
         <Form.Label>Title</Form.Label>
         <input
+          className="input"
           type="text"
           id="add-title"
           placeholder="Title"
