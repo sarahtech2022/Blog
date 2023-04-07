@@ -29,7 +29,8 @@ const BlogPage = () => {
       <p>This is the Blog Page, with blog ID: {blogID}</p>
       <p>
         {" "}
-        {blog[0]?.author} {blog[0]?.title} {blog[0]?.body} {blog[0]?.image}{" "}
+        {blog[0]?.author} {blog[0]?.title} {blog[0]?.body}{" "}
+        <img src={blog[0]?.image} className="photo2"></img>
       </p>
     </div>
   );

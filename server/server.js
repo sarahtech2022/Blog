@@ -4,17 +4,17 @@ require("dotenv").config();
 const path = require("path");
 const db = require("./db/db-connection.js");
 
-const fileUpload = require("express-fileupload");
+// const fileUpload = require("express-fileupload");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
-app.use(
-  fileUpload({
-    limits: { fileSize: 50 * 1024 * 1024 },
-  })
-);
+// app.use(
+//   fileUpload({
+//     limits: { fileSize: 50 * 1024 * 1024 },
+//   })
+// );
 
 // creates an endpoint for the route "/""
 app.get("/", (req, res) => {

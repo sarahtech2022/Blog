@@ -64,6 +64,7 @@ const ListBlog = (/*setBlogData*/) => {
     <div className="mybody">
       <div className="list-students">
         <h2>Blog Posts </h2>
+
         <ul>
           {blogs.map((blog) => {
             return (

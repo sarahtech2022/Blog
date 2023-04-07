@@ -101,7 +101,7 @@ const MyForm = ({ onSaveBlog }) => {
       <Form.Group>
         <Form.Label>Image</Form.Label>
         <input
-          type="file"
+          type="text"
           name="file"
           id="add-image"
           required
