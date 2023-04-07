@@ -20,7 +20,8 @@ const BlogCard = ({ blog }) => {
       <Card>
         <Card.Body>
           <Card.Title>
-            {blog.date.substring(0, 10)} {blog.author} {blog.title} {blog.body}
+            <p>{blog.date.substring(0, 10)}</p> <p>{blog.author}</p>{" "}
+            {blog.title}
           </Card.Title>
           <Link id="link" to={`/blog/${blog.id_blog}`}>
             {" "}

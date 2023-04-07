@@ -62,6 +62,14 @@ button.btn.btn-primary {
   margin-top: 1em;
 }
 
+
+.form-students {
+  /* margin: auto; */
+  width: 20%;
+  font-family: 'Literata', serif;
+}
+
+
 .card-body {
   margin-left: 2em;
   margin-right: 2em;
@@ -102,6 +110,7 @@ input[type=text], textarea {
   border-radius: 10px;
   border: 3px solid #e880bb
 }
+
 
 
 #titlepic {
