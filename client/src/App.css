@@ -1,8 +1,10 @@
 .App {
-  min-height: 100vh;
-  background-color: rgb(238, 232, 232);
+  /* min-height: 100vh; */
+  background-color: rgb(227, 98, 162);
   margin: 5px;
 }
+
+
 
 .mybody {
   display: flex;
@@ -38,21 +40,14 @@ form {
   flex: 1;
 }
 
-input[type=text] {
-  display: inline-block;
-  margin-top: -10px;
-  width: 100%;
-  font-size: 15px;
-  border-radius: 2px;
-  border: 3px solid #98d0f1
-}
+
 
 button.btn.btn-primary {
   margin-top: 25px;
 }
 
 .myicon {
-  stroke: rgb(243, 121, 7);
+  stroke: rgb(243, 7, 7);
   color: rgb(243, 121, 7);
   stroke-width: 10;
   margin-right: 0.9em;
@@ -67,7 +62,90 @@ button.btn.btn-primary {
   margin-top: 1em;
 }
 
+
+.form-students {
+  /* margin: auto; */
+  width: 20%;
+  font-family: 'Literata', serif;
+}
+
+
 .card-body {
   margin-left: 2em;
   margin-right: 2em;
+}
+
+
+.photo{
+  width: 100%;
+
+}
+
+.photo2{
+  width: 65%;
+}
+
+/* .input{
+      padding: 10px;
+        border-radius: 10px;
+} */
+
+
+h1{
+  text-align: center;
+  /* margin-right: 40px; */
+}
+
+#submit{
+  background-color: #fffcfe;
+  text-decoration-color: aliceblue;
+}
+
+
+input[type=text], textarea {
+  display: inline-block;
+  margin-top: -10px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 3px solid #e880bb
+}
+
+
+
+#titlepic {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
+
+#titlediv {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.card{
+  background-color: #f496b8;
+  color: rgb(255, 255, 255);
+}
+
+
+
+#link{
+  color: black;
+}
+
+
+#title{
+    text-align: center;
+    
+      /* font-family: Changa One; */
+      color: rgb(244, 105, 165);
+      text-shadow: 1px 1px 2px black,
+        0 0 1em rgb(229, 174, 216),
+        0 0 0.2em rgb(198, 155, 218);
+      font-size: 4rem;
+      font-weight: 600;
 }
